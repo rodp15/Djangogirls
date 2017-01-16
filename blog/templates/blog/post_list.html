@@ -3,23 +3,19 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div> {{ posts }} </div>
+        <div>
+            <h1> <a href="">Django Girls blog</a> </h1>
+        </div>
+        <div>   
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %} 
+        </div>
         <br />
-        <div>
-           <h1> <a href="">Django Girls blog</a> </h1>
-        </div>
-        
-        <div>
-            <p>Fecha de publicacion1</p>
-            <h2> <a href="">Primer Post</a> </h2>
-            <p>Rellenar con texto1</p>
-        </div>
-        <br />
-        <div>
-            <p>Fecha2</p>
-            <h2> <a href="">Segundo Post</a> </h2>
-            <p>Rellenar con texto2</p>
-        </div>
     </body>
 </html>
 
